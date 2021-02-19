@@ -1,0 +1,166 @@
+/* LIGHT AND DARK EXPERIMENT */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0.5em;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: normal;
+  color: black;
+  background-color: white;
+}
+
+h1 {
+  font-family: 'Roboto Slab', serif;
+}
+
+p {
+  max-width: 25em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+section {
+  padding: 5em 0.5em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+}
+
+/* BUTTON STYLES */
+
+.button {
+  color: inherit;
+  text-decoration: none;
+  border: 2px solid;
+  border-radius: 1em;
+  padding-top: 0.5em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  transition: all 0.3s;
+  margin: 1em;
+  position: relative;
+  animation: myfirst 5s linear 2s infinite alternate;
+}
+
+@keyframes myfirst {
+  0%   {left:0px; top:0px;}
+  25%  {left:200px; top:0px;}
+  50%  {left:200px; top:200px;}
+  75%  {left:0px; top:200px;}
+  100% {left:0px; top:0px;}
+}
+
+.button:hover {
+  background-color: #252017;
+  color: #EB8900;
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+  cursor: no-drop;
+}
+
+
+/* CARD */
+
+.card {
+  border: 2px solid;
+  border-radius: 1em;
+  padding-top: 0.5em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  overflow: hidden;
+  max-width: 20em;
+  transition: all 0.3s;
+  box-shadow: -2px 2px 2px rgba(0,0,0,0);
+  transition: box-shadow 0.5s;
+}
+
+.card-img {
+  filter:grayscale(1);
+  transition: all 0.5s;
+}
+
+.card-text {
+  padding: 0.5em;
+  font-family: 'Roboto Slab', serif;
+}
+
+.card-link {
+  padding: 0 0.5em 2em 0.5em;
+  display: block;
+  text-transform: uppercase;
+  color: inherit;
+  font-family: 'Roboto', arial, sans-serif;
+  text-decoration: none;
+  cursor: help;
+}
+
+.card:hover {
+  box-shadow: -2px 2px 2px rgba(0,0,0,0.5);
+  transform: scale(0.85,0.85);
+  transition: all 0.5s;
+  border-radius: 50%;
+  padding: 3em;
+}
+
+.card:hover .card-img {
+  filter:grayscale(0);
+}
+
+.card-link:hover {
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 30em) {
+  .grid {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    color: #EB8900;
+    background-color: #252017;
+  }
+
+  .button:hover {
+  background-color: #EB8900;
+  color: #252017;
+}
+
+.card {
+  box-shadow: -2px 2px 2px rgba(255,221,0,0);
+}
+.card:hover {
+  box-shadow: -2px 2px 2px rgba(255,221,0,0.5);
+}
+
+}
